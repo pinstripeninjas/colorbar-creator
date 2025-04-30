@@ -4,7 +4,7 @@ export const AppContext = createContext();
 
 export function AppProvider({ children }) {
 	const [appState, setAppState] = useState({
-		theme: 'light',
+		mainContent: 'turboColors',
 	});
 
 	return <AppContext.Provider value={{ appState, setAppState }}>{children}</AppContext.Provider>;

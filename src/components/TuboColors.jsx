@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { turboColormap } from '../js/turboFunctions';
+import { turboColormap } from '../config/turboFunctions';
 import ColorSwatch from './ColorSwatch';
 import CodeBlock from './CodeBlock';
 
@@ -15,7 +15,6 @@ function TurboColors() {
 
 	return (
 		<>
-			<h1 style={{ marginBottom: '1rem' }}>Turbo Colors</h1>
 			<div className="flex-column gap-4">
 				<div className="flex-row gap-3 align-center">
 					<div>Number of Colors:</div>
