@@ -2,8 +2,8 @@
 	--primary-text-color: rgba(255, 255, 255, 0.85);
 	--primary-bg-color: #242a37;
 	--primary-border: 1px solid #ffffffaa;
-	--code-bg: #087f8c;
-	--button-bg: #8a7090;
+	--bg-code: #087f8c;
+	--bg-highlight: #ffffff22;
 
 	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
@@ -39,7 +39,7 @@ pre {
 pre {
 	position: relative;
 	padding: 1.5rem;
-	background: var(--code-bg);
+	background: var(--bg-code);
 	white-space: pre-wrap;
 	overflow-wrap: break-word;
 	&:hover {
@@ -60,13 +60,20 @@ button {
 	text-transform: uppercase;
 
 	&:hover {
-		background: #ffffff22;
+		background: var(--bg-highlight);
 		cursor: pointer;
 	}
 
 	&.selected {
-		background: var(--code-bg);
+		background: var(--bg-code);
 	}
+}
+
+input,
+textarea {
+	padding: 0.5rem;
+	border: none;
+	background: var(--bg-highlight);
 }
 
 #root {
@@ -163,7 +170,7 @@ button {
 	padding: 0.4rem 0.4rem;
 	border: var(--primary-border);
 	border-radius: 6px;
-	background-color: #ffffff33;
+	background-color: var(--bg-highlight);
 	font-size: 1rem;
 }
 

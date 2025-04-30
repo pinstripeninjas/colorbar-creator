@@ -1,8 +1,9 @@
+import ColorFormat from '../components/ColorFormat';
 import TurboColors from '../components/TuboColors';
 
 export const contentConfig = [
 	{
-		component: <div>Color Format</div>,
+		component: <ColorFormat />,
 		id: 'colorFormat',
 		title: 'Color Format Converter',
 	},
