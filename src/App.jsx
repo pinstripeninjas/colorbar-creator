@@ -1,9 +1,15 @@
-import './App.css';
+import MapExample from './components/MapExample';
+import TurboColors from './components/TuboColors';
+import OptionsContainer from './components/OptionsContainer';
 
 function App() {
 	return (
-		<div>
-			<h1>Welcome to My App</h1>
+		<div className="app-container">
+			<OptionsContainer />
+			<div className="main-container">
+				<TurboColors />
+				<MapExample />
+			</div>
 		</div>
 	);
 }
