@@ -59,7 +59,6 @@ pre {
 	display: flex;
 	width: 100%;
 	height: 100vh;
-	/* grid-template-columns: 300px 1fr; */
 }
 
 .options-container {
@@ -72,6 +71,8 @@ pre {
 
 .main-container {
 	flex: 1;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
 }
 
 .header {

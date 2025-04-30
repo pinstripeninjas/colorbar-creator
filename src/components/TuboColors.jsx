@@ -12,10 +12,9 @@ function TurboColors() {
 	};
 
 	const turboColorsArray = turboColormap(numColors);
-	console.log('turboColorsArray:', turboColorsArray);
 
 	return (
-		<main className="main-content">
+		<>
 			<h1 style={{ marginBottom: '1rem' }}>Turbo Colors</h1>
 			<div className="flex-column gap-4">
 				<div className="flex-row gap-3 align-center">
@@ -25,7 +24,7 @@ function TurboColors() {
 				<ColorSwatch colorsArray={turboColorsArray} />
 				<CodeBlock code={turboColorsArray} formatColorArray />
 			</div>
-		</main>
+		</>
 	);
 }
 
