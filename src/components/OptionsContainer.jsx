@@ -24,7 +24,6 @@ function OptionsContainer() {
 						{item.title}
 					</button>
 				))}
-				<p>Battle Tested Options</p>
 				<p>---------------------</p>
 				<p>Upload Sample Data</p>
 				<p>Color Levels Array</p>

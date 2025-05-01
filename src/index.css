@@ -2,8 +2,12 @@
 	--primary-text-color: rgba(255, 255, 255, 0.85);
 	--primary-bg-color: #242a37;
 	--primary-border: 1px solid #ffffffaa;
-	--bg-code: #087f8c;
+	/* --bg-code: #087f8c; */
+	--primary-color: #3d7d86;
+	--secondar-color: #ec8d44;
 	--bg-highlight: #ffffff22;
+
+	--radius-md: 4px;
 
 	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
@@ -36,15 +40,22 @@ pre {
 	margin: 0;
 }
 
+button,
+input,
+textarea,
+select,
 pre {
-	position: relative;
-	padding: 1.5rem;
-	background: var(--bg-code);
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
 	&:hover {
 		cursor: pointer;
 	}
+}
+
+pre {
+	position: relative;
+	padding: 1.5rem;
+	background: var(--primary-color);
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
 	&:active {
 		transition: 0.2s all;
 		filter: brightness(1.1);
@@ -52,7 +63,7 @@ pre {
 }
 
 button {
-	border-radius: 4px;
+	border-radius: var(--radius-md);
 	transition: 0.2s all;
 	background: #ffffff00;
 	border: none;
@@ -61,19 +72,33 @@ button {
 
 	&:hover {
 		background: var(--bg-highlight);
-		cursor: pointer;
 	}
 
 	&.selected {
-		background: var(--bg-code);
+		background: var(--primary-color);
 	}
 }
 
 input,
-textarea {
+textarea,
+select {
 	padding: 0.5rem;
 	border: none;
 	background: var(--bg-highlight);
+	border-radius: var(--radius-md);
+	&:focus {
+		outline: none;
+		box-shadow: 0px 0px 0px 1.5px var(--secondar-color);
+	}
+}
+
+input[type='checkbox'] {
+	margin-right: 0.5rem;
+	accent-color: var(--primary-color);
+}
+
+select {
+	padding-right: 1rem;
 }
 
 #root {
