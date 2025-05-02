@@ -34,7 +34,7 @@ function CustomColors() {
 				const isValid = chroma.valid(color);
 				if (isValid) {
 					const rgba = chroma(color).rgba();
-					const cssColor = chroma(rgba).css();
+					const cssColor = `rgba(${rgba[0]}, ${rgba[1]}, ${rgba[2]}, ${rgba[3]})`;
 					rgbaColors.push(cssColor);
 				} else {
 					rgbaColors.push('Invalid Color');

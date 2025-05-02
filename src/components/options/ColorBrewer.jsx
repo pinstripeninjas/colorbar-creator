@@ -31,7 +31,7 @@ function ColorBrewer() {
 			const cssColorsArray = (isInverse ? colorsArray.reverse() : colorsArray).map(
 				(color) => {
 					const rgba = chroma(color).rgba();
-					const cssColor = chroma(rgba).css();
+					const cssColor = `rgba(${rgba[0]}, ${rgba[1]}, ${rgba[2]}, ${rgba[3]})`;
 					return cssColor;
 				}
 			);

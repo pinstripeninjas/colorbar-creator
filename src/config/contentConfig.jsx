@@ -1,31 +1,6 @@
-import ColorbarExplorer from '../components/ColorbarExplorer';
 import ColorBrewer from '../components/options/ColorBrewer';
-import ColorFormat from '../components/ColorFormat';
 import TurboColors from '../components/TuboColors';
 import CustomColors from '../components/options/CustomColors';
-
-export const contentConfig = [
-	{
-		component: <ColorBrewer />,
-		id: 'colorBrewer',
-		title: 'Color Brewer Tester',
-	},
-	{
-		component: <ColorFormat />,
-		id: 'colorFormat',
-		title: 'Color Format Converter',
-	},
-	{
-		component: <ColorbarExplorer />,
-		id: 'colorbarExplorer',
-		title: 'Colorbar Explorer',
-	},
-	{
-		component: <TurboColors />,
-		id: 'turboColors',
-		title: 'Turbo Colorbar Creator',
-	},
-];
 
 export const colorbarOptionsConfig = [
 	{

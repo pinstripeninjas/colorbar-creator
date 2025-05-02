@@ -1,5 +1,4 @@
 import MapContainer from './components/MapContainer';
-import OptionsContainer from './components/OptionsContainer';
 import MainContainer from './components/MainContainer';
 
 function App() {
