@@ -5,7 +5,6 @@ import MainContainer from './components/MainContainer';
 function App() {
 	return (
 		<div className="app-container">
-			<OptionsContainer />
 			<div className="main-container">
 				<MainContainer />
 				<MapContainer />

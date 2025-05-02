@@ -10,7 +10,7 @@ function ColorbarExplorer() {
 	const selectedOption = colorbarOptionsConfig.find((option) => option.id === radioButtonOpt);
 
 	return (
-		<div className="flex-column gap-4">
+		<div className="flex-column gap-4 p-4">
 			<div className="flex-row gap-3 align-center">
 				<div>Options:</div>
 				{colorbarOptionsConfig.map((item) => (

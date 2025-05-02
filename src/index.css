@@ -168,28 +168,24 @@ select {
 	height: 100vh;
 }
 
-.options-container {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	border-right: var(--primary-border);
-	min-width: 300px;
-}
-
 .main-container {
 	flex: 1;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
 
-.header {
-	padding: 0.5rem 1rem;
-	border-bottom: var(--primary-border);
-	text-align: center;
+.main-content {
+	border-right: var(--primary-border);
 }
 
-.main-content {
-	padding: 0.5rem 1rem;
+nav {
+	display: flex;
+	align-items: center;
+	border-bottom: var(--primary-border);
+	& h1 {
+		padding: 1rem;
+		font-size: 2rem;
+	}
 }
 
 .swatch-container {
