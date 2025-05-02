@@ -13,7 +13,6 @@ function TurboColors() {
 
 	useEffect(() => {
 		const turboColorsArray = turboColormap(numColors);
-		console.log('turboColorsArray:', turboColorsArray);
 		setAppState((prevState) => ({
 			...prevState,
 			cssColorsArray: turboColorsArray,

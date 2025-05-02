@@ -12,13 +12,15 @@ import {
 } from 'desi-graphics';
 import { AppContext } from '../context/AppContext';
 import temperatures from '../data/temp';
+// import windMagnitude from '../data/wmag';
+// import windDirection from '../data/wdir';
 
 function MapContainer() {
 	const { appState } = useContext(AppContext);
 	const { cssColorsArray } = appState;
 
 	const overlayRef = useRef();
-	const mapContainer = useRef();
+	const mapWrapper = useRef();
 	const mapRef = useRef();
 	// Make the LonLatGrid of Data
 	// This is HREF data sampled every 4 points (resLevel = 4)
@@ -59,9 +61,6 @@ function MapContainer() {
 		// round the value to the nearest integer
 		(_, i) => Number((minValue + (i * (maxValue - minValue)) / (numColors - 2)).toFixed(0))
 	);
-	console.log('minValue:', minValue);
-	console.log('maxValue:', maxValue);
-	console.log('colorLevels:', colorLevels);
 
 	const shadedLayer = new ShadedLayer({
 		id: 'shadedLayer',
@@ -85,13 +84,17 @@ function MapContainer() {
 			type: 'staticBar', // 'staticBar', 'staticItems', 'dynamicItems'
 			title: 'Temperature',
 			units: '°F',
+			colorbarTicks: 'byvalue',
+			animatinospeed: 500,
+			colorbar_lcap: true,
+			colorbar_rcap: true,
 		},
 	});
 
 	const layers = [shadedLayer];
 
 	return (
-		<div style={{ width: '100%', position: 'relative', height: '100%' }}>
+		<div ref={mapWrapper} style={{ width: '100%', position: 'relative', height: '100%' }}>
 			<Map
 				initialViewState={{
 					longitude: -97,
@@ -108,7 +111,7 @@ function MapContainer() {
 			>
 				<DeckGLOverlay overlayRef={overlayRef} layers={layers} interleaved />
 				<Readout
-					mapContainer={mapContainer}
+					mapContainer={mapWrapper}
 					overlayRef={overlayRef}
 					title="Wed 06:00 am PST, Oct 21"
 				/>

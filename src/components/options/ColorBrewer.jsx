@@ -44,8 +44,6 @@ function ColorBrewer() {
 		}));
 	}, [colorBrewerOpt, isInverse, numColors, setAppState]);
 
-	console.log('rendering ColorBrewer');
-
 	return (
 		<div className="flex-column gap-4">
 			<div className="flex-row gap-3 align-center">
