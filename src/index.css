@@ -4,7 +4,7 @@
 	--primary-border: 1px solid #ffffffaa;
 	/* --bg-code: #087f8c; */
 	--primary-color: #3d7d86;
-	--secondar-color: #ec8d44;
+	--secondary-color: #ffad4f;
 	--bg-highlight: #ffffff22;
 
 	--radius-md: 4px;
@@ -90,14 +90,67 @@ select {
 	border-radius: var(--radius-md);
 	&:focus {
 		outline: none;
-		box-shadow: 0px 0px 0px 1.5px var(--secondar-color);
+		box-shadow: 0px 0px 0px 2px var(--secondary-color);
 	}
+}
+
+label {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	.checked {
+		color: var(--secondary-color);
+	}
+}
+
+input[type='radio'] {
+	border-radius: 50%;
+}
+
+input[type='checkbox'] {
+	border-radius: var(--radius-md);
 }
 
 input[type='checkbox'],
 input[type='radio'] {
-	margin-right: 0.5rem;
-	accent-color: var(--primary-color);
+	/* remove native styling */
+	-webkit-appearance: none;
+	appearance: none;
+	padding: 0;
+
+	/* size & shape */
+	width: 1rem;
+	height: 1rem;
+	border: 2px solid var(--primary-color);
+	margin: 0;
+	position: relative;
+	cursor: pointer;
+	background-color: transparent;
+	transition: background-color 0.1s ease-in-out;
+
+	/* focus ring */
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 0 2px var(--secondary-color);
+	}
+
+	/* checked state for checkbox: draw the “check” */
+	&[type='checkbox']:checked::after {
+		content: '';
+		position: absolute;
+		top: 0rem;
+		left: 0.15rem;
+		width: 0.2rem;
+		height: 0.5rem;
+		border: solid var(--primary-color);
+		border-width: 0 0.2rem 0.2rem 0;
+		transform: rotate(45deg);
+	}
+
+	/* checked state for radio: fill circle */
+	&[type='radio']:checked {
+		background-color: var(--primary-color);
+	}
 }
 
 select {

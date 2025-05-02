@@ -14,6 +14,10 @@ const radioButtonConfig = [
 		name: 'Custom Colors',
 	},
 	{
+		id: 'customGradient',
+		name: 'Custom Gradient',
+	},
+	{
 		id: 'turboColors',
 		name: 'Turbo Colors',
 	},
@@ -56,7 +60,9 @@ function ColorbarExplorer() {
 							checked={radioButtonOpt === item.id}
 							onChange={() => setRadioButtonOpt(item.id)}
 						/>
-						{item.name}
+						<span className={radioButtonOpt === item.id ? 'checked' : null}>
+							{item.name}
+						</span>
 					</label>
 				))}
 			</div>
@@ -75,7 +81,7 @@ function ColorbarExplorer() {
 						checked={isInverse}
 						onChange={(e) => setIsInverse(e.target.checked)}
 					/>
-					Inverse
+					<span className={isInverse ? 'checked' : null}>Inverse</span>
 				</label>
 			</div>
 			<ColorSwatch colorsArray={cssColorsArray} />
