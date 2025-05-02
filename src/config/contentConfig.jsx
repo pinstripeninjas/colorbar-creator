@@ -1,3 +1,4 @@
+import ColorbarExplorer from '../components/ColorbarExplorer';
 import ColorBrewer from '../components/ColorBrewer';
 import ColorFormat from '../components/ColorFormat';
 import TurboColors from '../components/TuboColors';
@@ -14,9 +15,9 @@ export const contentConfig = [
 		title: 'Color Format Converter',
 	},
 	{
-		component: <div>Gradient Explorer</div>,
-		id: 'gradientExplorer',
-		title: 'Gradient Explorer',
+		component: <ColorbarExplorer />,
+		id: 'colorbarExplorer',
+		title: 'Colorbar Explorer',
 	},
 	{
 		component: <TurboColors />,

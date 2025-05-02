@@ -4,8 +4,24 @@ import chroma from 'chroma-js';
 import { brewerConfig } from '../config/contentConfig';
 import CodeBlock from './CodeBlock';
 
-function ColorBrewer() {
+const radioButtonConfig = [
+	{
+		id: 'colorBrewer',
+		name: 'Color Brewer',
+	},
+	{
+		id: 'customColors',
+		name: 'Custom Colors',
+	},
+	{
+		id: 'turboColors',
+		name: 'Turbo Colors',
+	},
+];
+
+function ColorbarExplorer() {
 	const [colorBrewerOpt, setColorBrewerOpt] = useState(brewerConfig[0].id);
+	const [radioButtonOpt, setRadioButtonOpt] = useState(radioButtonConfig[0].id);
 	const [numColors, setNumColors] = useState(5);
 	const [isInverse, setIsInverse] = useState(false);
 
@@ -30,6 +46,21 @@ function ColorBrewer() {
 				<input type="number" min={2} value={numColors} onChange={handleNumColors} />
 			</div>
 			<div className="flex-row gap-3 align-center">
+				<div>Options:</div>
+				{radioButtonConfig.map((item) => (
+					<label key={item.id}>
+						<input
+							type="radio"
+							name="options"
+							value={item.id}
+							checked={radioButtonOpt === item.id}
+							onChange={() => setRadioButtonOpt(item.id)}
+						/>
+						{item.name}
+					</label>
+				))}
+			</div>
+			<div className="flex-row gap-3 align-center">
 				<div>Color Scheme:</div>
 				<select value={colorBrewerOpt} onChange={(e) => setColorBrewerOpt(e.target.value)}>
 					{brewerConfig.map((item) => (
@@ -52,5 +83,4 @@ function ColorBrewer() {
 		</div>
 	);
 }
-
-export default ColorBrewer;
+export default ColorbarExplorer;
