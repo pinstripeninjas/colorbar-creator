@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { FaRegCopy } from 'react-icons/fa';
+import { AppContext } from '../context/AppContext';
 
-function CodeBlock({ code, formatColorArray = false }) {
+function CodeBlock({ code = null, isColorsArray = false }) {
 	const [isHovered, setIsHovered] = useState(false);
+	const { appState } = useContext(AppContext);
+	let finalCode = code;
 
-	if (formatColorArray) {
-		code = JSON.stringify(code, null);
+	if (isColorsArray) {
+		finalCode = JSON.stringify(appState.cssColorsArray, null);
 	}
 
 	const handleMouseEnter = () => {
@@ -18,7 +21,7 @@ function CodeBlock({ code, formatColorArray = false }) {
 
 	const handleClick = () => {
 		navigator.clipboard
-			.writeText(code)
+			.writeText(finalCode)
 			.then(() => {
 				console.log('Code copied to clipboard');
 			})
@@ -34,7 +37,7 @@ function CodeBlock({ code, formatColorArray = false }) {
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}
 				onClick={handleClick}>
-				<code>{code}</code>
+				<code>{finalCode}</code>
 				{isHovered && (
 					<div className="copy-icon">
 						<FaRegCopy />

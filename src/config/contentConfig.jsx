@@ -1,7 +1,8 @@
 import ColorbarExplorer from '../components/ColorbarExplorer';
-import ColorBrewer from '../components/ColorBrewer';
+import ColorBrewer from '../components/options/ColorBrewer';
 import ColorFormat from '../components/ColorFormat';
 import TurboColors from '../components/TuboColors';
+import CustomColors from '../components/options/CustomColors';
 
 export const contentConfig = [
 	{
@@ -23,6 +24,29 @@ export const contentConfig = [
 		component: <TurboColors />,
 		id: 'turboColors',
 		title: 'Turbo Colorbar Creator',
+	},
+];
+
+export const colorbarOptionsConfig = [
+	{
+		component: ColorBrewer,
+		id: 'colorBrewer',
+		name: 'Color Brewer',
+	},
+	{
+		component: CustomColors,
+		id: 'customColors',
+		name: 'Custom Colors',
+	},
+	{
+		component: <div>custom gradient</div>,
+		id: 'customGradient',
+		name: 'Custom Gradient',
+	},
+	{
+		component: TurboColors,
+		id: 'turboColors',
+		name: 'Turbo Colors',
 	},
 ];
 
