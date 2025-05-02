@@ -1,5 +1,5 @@
 import ColorBrewer from '../components/options/ColorBrewer';
-import TurboColors from '../components/TuboColors';
+import TurboColors from '../components/options/TuboColors';
 import CustomColors from '../components/options/CustomColors';
 
 export const colorbarOptionsConfig = [
