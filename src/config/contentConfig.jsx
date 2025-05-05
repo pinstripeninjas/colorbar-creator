@@ -1,6 +1,7 @@
 import ColorBrewer from '../components/options/ColorBrewer';
 import TurboColors from '../components/options/TuboColors';
 import CustomColors from '../components/options/CustomColors';
+import CustomGradient from '../components/options/CustomGradient';
 
 export const colorbarOptionsConfig = [
 	{
@@ -14,7 +15,7 @@ export const colorbarOptionsConfig = [
 		name: 'Custom Colors',
 	},
 	{
-		component: <div>custom gradient</div>,
+		component: CustomGradient,
 		id: 'customGradient',
 		name: 'Custom Gradient',
 	},
