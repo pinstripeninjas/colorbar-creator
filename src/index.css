@@ -6,6 +6,7 @@
 	--primary-color: #3d7d86;
 	--secondary-color: #ffad4f;
 	--bg-highlight: #ffffff22;
+	--danger-color: #ff6481;
 
 	--radius-md: 4px;
 
@@ -113,8 +114,8 @@ label {
 
 input[type='color'] {
 	padding: 0;
-	width: 5rem;
-	height: 2.5rem;
+	width: 4rem;
+	height: 3rem;
 }
 
 input[type='radio'] {

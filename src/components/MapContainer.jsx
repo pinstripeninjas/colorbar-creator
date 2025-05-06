@@ -61,6 +61,7 @@ function MapContainer() {
 		// round the value to the nearest integer
 		(_, i) => Number((minValue + (i * (maxValue - minValue)) / (numColors - 2)).toFixed(0))
 	);
+	console.log('colorLevels:', colorLevels);
 
 	const shadedLayer = new ShadedLayer({
 		id: 'shadedLayer',
