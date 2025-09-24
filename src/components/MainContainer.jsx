@@ -6,7 +6,6 @@ function MainContainer() {
 		<main className="main-content">
 			<nav>
 				<h1 className="gradient-text">Colorbar Creator</h1>
-				<p>You're doing great bro!</p>
 			</nav>
 			<ColorbarExplorer />
 		</main>
