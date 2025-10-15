@@ -15,15 +15,15 @@
 	"dependencies": {
 		"chroma-js": "^3.1.2",
 		"d3": "~7.9.0",
-		"deck.gl": "~9.0.33",
-		"desi-graphics": "^1.0.5",
+		"deck.gl": "~9.1.0",
+		"desi-graphics": "^1.1.7",
 		"lodash": "~4.17.21",
 		"maplibre-gl": "~4.7.1",
-		"proj4": "~2.12.1",
 		"react": "~18.3.1",
 		"react-dom": "~18.3.1",
 		"react-icons": "^5.5.0",
-		"react-map-gl": "~7.1.7"
+		"proj4": "~2.12.1",
+		"react-map-gl": "7.1.7"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.22.0",

@@ -61,7 +61,6 @@ function MapContainer() {
 		// round the value to the nearest integer
 		(_, i) => Number((minValue + (i * (maxValue - minValue)) / (numColors - 2)).toFixed(0))
 	);
-	console.log('colorLevels:', colorLevels);
 
 	const shadedLayer = new ShadedLayer({
 		id: 'shadedLayer',
@@ -83,12 +82,12 @@ function MapContainer() {
 		],
 		legend: {
 			type: 'staticBar', // 'staticBar', 'staticItems', 'dynamicItems'
-			title: 'Temperature',
-			units: '°F',
-			colorbarTicks: 'byvalue',
-			animatinospeed: 500,
-			colorbar_lcap: true,
-			colorbar_rcap: true,
+			title: 'Colorbar Test Values',
+			ticks: 'byColorLevels',
+			tickValues: colorLevels,
+			animationSpeed: 500,
+			isLeftCap: true,
+			isRightCap: true,
 		},
 	});
 
